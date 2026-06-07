@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đặc sản trên bản</title>
+  <meta name="description" content="Website bán đặc sản Tây Bắc: thịt trâu gác bếp, thịt lợn gác bếp, lạp xưởng, rượu mận, rượu tam thất." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="nav">
+      <a class="logo" href="#home" aria-label="Đặc sản trên bản"><span class="logo-mark">ĐS</span><span>Đặc sản trên bản</span></a>
+      <div class="nav-links">
+        <a href="#products">Sản phẩm</a>
+        <a href="#about">Câu chuyện</a>
+        <a href="#order">Đặt hàng</a>
+        <a href="#payment">Thanh toán</a>
+      </div>
+      <a class="nav-cart" href="#order">🛒 <span id="cartCount">0</span></a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">Hương vị Tây Bắc trong từng món quà</p>
+      <h1>Đặc sản trên bản</h1>
+      <p class="hero-text">Thịt gác bếp thơm mùi khói, lạp xưởng đậm vị núi rừng và rượu đặc sản được tuyển chọn kỹ lưỡng. Giao hàng nhanh, đóng gói sạch đẹp, phù hợp làm quà biếu.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#products">Mua ngay</a>
+        <a class="btn glass" href="#payment">Xem mã QR</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>18</b><span>Sản phẩm</span></div>
+        <div><b>6</b><span>Món mỗi trang</span></div>
+        <div><b>QR</b><span>Quét thanh toán</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro" id="about">
+      <div class="section-title left">
+        <p class="eyebrow">Câu chuyện sản phẩm</p>
+        <h2>Quà ngon từ bản làng, giữ trọn vị truyền thống</h2>
+        <p>Các món đặc sản được giới thiệu với hình ảnh rõ ràng, giá niêm yết minh bạch, thao tác đặt hàng đơn giản. Website có giỏ hàng, tìm kiếm, phân trang và thanh toán bằng mã QR.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span>🔥</span><h3>Chuẩn vị gác bếp</h3><p>Thơm mùi khói, cay nhẹ, đậm vị núi rừng.</p></article>
+        <article class="feature-card"><span>🧺</span><h3>Đóng gói sạch đẹp</h3><p>Phù hợp dùng trong gia đình hoặc làm quà biếu.</p></article>
+        <article class="feature-card"><span>📱</span><h3>Đặt hàng nhanh</h3><p>Chọn món, gửi đơn, quét QR và chờ xác nhận.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-title">
+        <p class="eyebrow">Gian hàng đặc sản</p>
+        <h2>Danh sách 18 sản phẩm</h2>
+        <p>Tìm kiếm nhanh, lọc theo danh mục và phân trang 6 món mỗi trang.</p>
+      </div>
+      <div class="tools">
+        <label class="search-box"><span>🔎</span><input id="searchInput" type="search" placeholder="Tìm: thịt trâu, rượu mận, lạp xưởng..." /></label>
+        <select id="categoryFilter">
+          <option value="all">Tất cả danh mục</option>
+          <option value="Thịt gác bếp">Thịt gác bếp</option>
+          <option value="Rượu đặc sản">Rượu đặc sản</option>
+          <option value="Đồ khô">Đồ khô</option>
+        </select>
+      </div>
+      <div id="productGrid" class="grid"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+
+    <section class="section order-section" id="order">
+      <div class="section-title left">
+        <p class="eyebrow">Giỏ hàng</p>
+        <h2>Kiểm tra đơn và gửi thông tin</h2>
+        <p>Khách hàng chọn sản phẩm, nhập thông tin nhận hàng. Sau đó quét mã QR ở phần thanh toán để chuyển khoản.</p>
+      </div>
+      <div class="order-layout">
+        <div class="cart-box">
+          <div class="cart-head"><h3>Đơn hàng của bạn</h3><button id="clearCartBtn" type="button">Xóa giỏ</button></div>
+          <div id="cartBox"></div>
+        </div>
+        <form id="orderForm" class="order-form">
+          <h3>Thông tin khách hàng</h3>
+          <div class="form-row">
+            <label>Họ và tên<input required name="name" placeholder="Nguyễn Văn A" /></label>
+            <label>Số điện thoại<input required name="phone" placeholder="09xxxxxxxx" /></label>
+          </div>
+          <label>Địa chỉ nhận hàng<textarea required name="address" rows="3" placeholder="Số nhà, xã/phường, tỉnh/thành"></textarea></label>
+          <label>Ghi chú<textarea name="note" rows="3" placeholder="Ví dụ: giao buổi chiều, đóng gói làm quà..."></textarea></label>
+          <input type="hidden" name="orderDetail" id="orderDetail" />
+          <button type="submit" class="btn primary full">Gửi đơn hàng</button>
+          <p class="small">Sau khi gửi đơn, vui lòng quét mã QR để thanh toán. Cửa hàng sẽ liên hệ xác nhận trước khi giao.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section payment" id="payment">
+      <div class="payment-text">
+        <p class="eyebrow">Thanh toán chuyên nghiệp</p>
+        <h2>Quét mã QR để chuyển khoản</h2>
+        <p>Mã QR đã được đặt trực tiếp trên website. Khách hàng chỉ cần mở app ngân hàng và quét mã để thanh toán nhanh.</p>
+        <div class="bank-note"><b>Nội dung chuyển khoản:</b><span>DSBAN + Số điện thoại</span></div>
+        <div class="payment-steps"><span>1. Gửi đơn</span><span>2. Quét QR</span><span>3. Chờ xác nhận</span></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-label">VIETQR / NAPAS</div>
+        <img class="qr-image" src="assets/qr-thanh-toan.png" alt="Mã QR thanh toán BIDV" />
+        <div class="bank-info">
+          <p>Chủ tài khoản</p><b>ROAN HUYEN TRANG</b>
+          <p>Ngân hàng</p><b>BIDV - CN Lào Cai</b>
+          <p>Số tài khoản</p><b>3750337357</b>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><h2>Đặc sản trên bản</h2><p>Thơm vị khói bếp - đậm tình bản làng.</p></div>
+    <a class="btn glass footer-btn" href="#products">Tiếp tục mua hàng</a>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
